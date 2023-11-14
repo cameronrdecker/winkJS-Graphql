@@ -7,7 +7,7 @@ const typeDefs = `#graphql
   }
 
   type Token {
-    token: String
+    value: String
     stem: String
     lemma: String
     pos: String
