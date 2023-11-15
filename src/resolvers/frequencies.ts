@@ -1,0 +1,14 @@
+
+const frequencies = (doc, its, as, fields) => {
+    //const frequencies = doc.tokens().filter((t)=>(  t.out( its.stopWordFlag ) === false && t.out( its.pos ) == 'VERB' )).out(its.value, as.freqTable).map((f)=>{
+    const frequencies = doc.tokens().out(its.value, as.freqTable).map((f)=>{
+        return {
+            value: f[0],
+            frequency: f[1]
+        }
+    });
+
+    return frequencies.sort((a,b) => { a.frequency > b.frequency ? 1 : -1});
+}
+
+export default frequencies;
