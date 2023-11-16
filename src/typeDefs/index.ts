@@ -4,6 +4,7 @@ const typeDefs = `#graphql
     value: String
     normal: String
     span: [Int]
+    token_totals: Totals
     isNegated: Boolean
     sentences: [Sentence]
     entities: [String]
@@ -11,9 +12,17 @@ const typeDefs = `#graphql
     frequencies: [Frequency]
   }
 
+  type Totals{
+    value: Int
+    stem: Int
+    lemma: Int
+    normal: Int
+  }
+
   type Frequency{
     value: String
-    frequency: Int
+    absolute_frequency: Int
+    mean_frequency: Float
   }
 
   type Token {
